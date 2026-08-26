@@ -1,3 +1,44 @@
+
+
+import { CategoryCard } from "@/components/CategoryCard";
+
+/**
+ * Categorias disponíveis na página inicial.
+ *
+ * Posteriormente esses dados poderão vir de um banco
+ * ou de outra fonte sem precisarmos reescrever os cards.
+ */
+const categories = [
+  {
+    title: "Cozinha",
+    description:
+      "Utensílios, organização e eletroportáteis para sua cozinha.",
+    icon: "🍳",
+    href: "/cozinha",
+  },
+  {
+    title: "Banheiro",
+    description:
+      "Produtos para organização, conforto e praticidade.",
+    icon: "🚿",
+    href: "/banheiro",
+  },
+  {
+    title: "Quarto",
+    description:
+      "Itens para deixar seu quarto confortável e organizado.",
+    icon: "🛏️",
+    href: "/quarto",
+  },
+  {
+    title: "Sala",
+    description:
+      "Decoração, organização e produtos para sua sala.",
+    icon: "🛋️",
+    href: "/sala",
+  },
+];
+
 /**
  * Página inicial do Achadinhos do Lar.
  *
@@ -32,6 +73,18 @@ export default function Home() {
         id="categorias"
         className="mx-auto max-w-7xl px-4 py-16"
       >
+<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  {categories.map((category) => (
+    <CategoryCard
+      key={category.href}
+      title={category.title}
+      description={category.description}
+      icon={category.icon}
+      href={category.href}
+    />
+  ))}
+</div>
+
         <h2 className="text-3xl font-bold text-gray-900">
           Explore por categoria
         </h2>
