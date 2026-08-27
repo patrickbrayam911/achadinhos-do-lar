@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import { ProductGrid } from "@/components/ProductGrid";
+import { products } from "@/data/products";
+
 /**
  * Metadados específicos da página de Cozinha.
  */
@@ -17,6 +20,14 @@ export const metadata: Metadata = {
  * /cozinha
  */
 export default function CozinhaPage() {
+  /**
+   * Seleciona somente produtos pertencentes
+   * à categoria cozinha.
+   */
+ const kitchenProducts = products.filter(
+  (product) => product.category === "cozinha"
+);
+
   return (
     <main>
       {/* Apresentação da categoria. */}
@@ -38,16 +49,20 @@ export default function CozinhaPage() {
         </div>
       </section>
 
-      {/* Futuramente receberá os produtos da categoria. */}
+      {/* Produtos disponíveis para a categoria. */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <h2 className="text-2xl font-bold text-gray-900">
           Achadinhos para sua cozinha
         </h2>
 
         <p className="mt-2 text-gray-600">
-          Em breve, você encontrará aqui nossa seleção de produtos
-          para cozinha.
+          Confira alguns produtos selecionados para sua cozinha.
         </p>
+
+        {/* Envia os produtos filtrados para o grid. */}
+        <div className="mt-8">
+          <ProductGrid products={kitchenProducts} />
+        </div>
       </section>
     </main>
   );
