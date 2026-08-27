@@ -1,39 +1,38 @@
 import type { Metadata } from "next";
 
 /**
- * Metadados específicos da página de Cozinha.
+ * Metadados específicos da página de Banheiro.
  */
 export const metadata: Metadata = {
-  title: "Produtos para Cozinha",
+  title: "Produtos para Banheiro",
 
   description:
-    "Descubra utensílios, organização, eletroportáteis e produtos selecionados para deixar sua cozinha mais prática e funcional.",
+    "Descubra produtos para organização, conforto e praticidade para deixar seu banheiro mais funcional e organizado.",
 };
 
 /**
- * Página da categoria Cozinha.
+ * Página da categoria Banheiro.
  *
  * Rota correspondente:
- * /cozinha
+ * /banheiro
  */
-export default function CozinhaPage() {
+export default function BanheiroPage() {
   return (
     <main>
       {/* Apresentação da categoria. */}
-      <section className="bg-amber-50">
+      <section className="bg-sky-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
-          <p className="font-semibold text-amber-600">
+          <p className="font-semibold text-sky-600">
             Achadinhos do Lar
           </p>
 
           <h1 className="mt-2 text-4xl font-bold text-gray-900">
-            Produtos para Cozinha
+            Produtos para Banheiro
           </h1>
 
           <p className="mt-4 max-w-2xl text-lg text-gray-600">
-            Descubra utensílios, itens de organização e produtos
-            selecionados para deixar sua cozinha mais prática,
-            organizada e funcional.
+            Encontre produtos para organização, conforto e
+            praticidade para deixar seu banheiro mais funcional.
           </p>
         </div>
       </section>
@@ -41,12 +40,12 @@ export default function CozinhaPage() {
       {/* Futuramente receberá os produtos da categoria. */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <h2 className="text-2xl font-bold text-gray-900">
-          Achadinhos para sua cozinha
+          Achadinhos para seu banheiro
         </h2>
 
         <p className="mt-2 text-gray-600">
           Em breve, você encontrará aqui nossa seleção de produtos
-          para cozinha.
+          para banheiro.
         </p>
       </section>
     </main>

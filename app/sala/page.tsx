@@ -1,39 +1,38 @@
 import type { Metadata } from "next";
 
 /**
- * Metadados específicos da página de Cozinha.
+ * Metadados específicos da página de Sala.
  */
 export const metadata: Metadata = {
-  title: "Produtos para Cozinha",
+  title: "Produtos para Sala",
 
   description:
-    "Descubra utensílios, organização, eletroportáteis e produtos selecionados para deixar sua cozinha mais prática e funcional.",
+    "Descubra produtos de decoração, organização e utilidades para deixar sua sala mais bonita, confortável e funcional.",
 };
 
 /**
- * Página da categoria Cozinha.
+ * Página da categoria Sala.
  *
  * Rota correspondente:
- * /cozinha
+ * /sala
  */
-export default function CozinhaPage() {
+export default function SalaPage() {
   return (
     <main>
       {/* Apresentação da categoria. */}
-      <section className="bg-amber-50">
+      <section className="bg-emerald-50">
         <div className="mx-auto max-w-7xl px-4 py-16">
-          <p className="font-semibold text-amber-600">
+          <p className="font-semibold text-emerald-600">
             Achadinhos do Lar
           </p>
 
           <h1 className="mt-2 text-4xl font-bold text-gray-900">
-            Produtos para Cozinha
+            Produtos para Sala
           </h1>
 
           <p className="mt-4 max-w-2xl text-lg text-gray-600">
-            Descubra utensílios, itens de organização e produtos
-            selecionados para deixar sua cozinha mais prática,
-            organizada e funcional.
+            Encontre produtos de decoração, organização e utilidades
+            para deixar sua sala mais bonita e confortável.
           </p>
         </div>
       </section>
@@ -41,12 +40,12 @@ export default function CozinhaPage() {
       {/* Futuramente receberá os produtos da categoria. */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <h2 className="text-2xl font-bold text-gray-900">
-          Achadinhos para sua cozinha
+          Achadinhos para sua sala
         </h2>
 
         <p className="mt-2 text-gray-600">
           Em breve, você encontrará aqui nossa seleção de produtos
-          para cozinha.
+          para sala.
         </p>
       </section>
     </main>

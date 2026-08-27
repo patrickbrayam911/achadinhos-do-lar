@@ -1,7 +1,16 @@
-
+import type { Metadata } from "next";
 
 import { CategoryCard } from "@/components/CategoryCard";
 
+/**
+ * Metadados específicos da página inicial.
+ */
+export const metadata: Metadata = {
+  title: "Achadinhos para sua Casa",
+
+  description:
+    "Descubra produtos selecionados para cozinha, banheiro, quarto, sala e outros ambientes da sua casa.",
+};
 /**
  * Categorias disponíveis na página inicial.
  *
