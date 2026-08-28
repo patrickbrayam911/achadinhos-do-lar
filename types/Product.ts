@@ -1,3 +1,16 @@
+
+/**
+ * Categorias de produtos reconhecidas pela aplicação.
+ *
+ * O union type restringe os valores possíveis e ajuda
+ * o TypeScript a detectar categorias inválidas.
+ */
+export type ProductCategory =
+  | "cozinha"
+  | "banheiro"
+  | "quarto"
+  | "sala";
+
 /**
  * Representa um produto exibido no Achadinhos do Lar.
  *
@@ -32,10 +45,10 @@ export type Product = {
    */
   imageUrl: string;
 
-  /**
-   * Categoria interna do produto.
-   */
-  category: string;
+ /**
+ * Categoria à qual o produto pertence.
+ */
+category: ProductCategory;
 
   /**
    * URL para onde o usuário será direcionado
