@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { ProductGrid } from "@/components/ProductGrid";
-import { products } from "@/data/products";
+import { getProductsByCategory } from "@/services/products";
 
 /**
  * Metadados específicos da página de Cozinha.
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
  * /cozinha
  */
 export default function CozinhaPage() {
+ 
   /**
-   * Seleciona somente produtos pertencentes
-   * à categoria cozinha.
-   */
- const kitchenProducts = products.filter(
-  (product) => product.category === "cozinha"
-);
+ * Obtém os produtos da categoria através da
+ * camada de serviço da aplicação.
+ */
+const kitchenProducts =
+  getProductsByCategory("cozinha");
 
   return (
     <main>

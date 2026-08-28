@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
+import { ProductGrid } from "@/components/ProductGrid";
+import { getProductsByCategory } from "@/services/products";
+
 /**
  * Metadados específicos da página de Quarto.
  */
 export const metadata: Metadata = {
   title: "Produtos para Quarto",
-
   description:
     "Descubra produtos para organização, conforto e decoração para deixar seu quarto mais aconchegante e funcional.",
 };
@@ -17,6 +19,13 @@ export const metadata: Metadata = {
  * /quarto
  */
 export default function QuartoPage() {
+  /**
+   * Obtém os produtos da categoria quarto
+   * através da camada de serviço.
+   */
+  const bedroomProducts =
+    getProductsByCategory("quarto");
+
   return (
     <main>
       {/* Apresentação da categoria. */}
@@ -31,22 +40,26 @@ export default function QuartoPage() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-lg text-gray-600">
-            Descubra itens para organização, conforto e decoração
-            para deixar seu quarto ainda mais aconchegante.
+            Descubra produtos para organização, conforto e decoração
+            para deixar seu quarto mais aconchegante e funcional.
           </p>
         </div>
       </section>
 
-      {/* Futuramente receberá os produtos da categoria. */}
+      {/* Produtos disponíveis para a categoria quarto. */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <h2 className="text-2xl font-bold text-gray-900">
           Achadinhos para seu quarto
         </h2>
 
         <p className="mt-2 text-gray-600">
-          Em breve, você encontrará aqui nossa seleção de produtos
-          para quarto.
+          Confira alguns produtos selecionados para seu quarto.
         </p>
+
+        {/* Grid com os produtos retornados pelo serviço. */}
+        <div className="mt-8">
+          <ProductGrid products={bedroomProducts} />
+        </div>
       </section>
     </main>
   );
