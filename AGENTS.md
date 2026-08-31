@@ -1,9 +1,72 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# AGENTS.md
 
-# This is NOT the Next.js you know
+## Project overview
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+This repository contains **Achadinhos do Lar**, a web application
+focused on organizing and presenting product recommendations for
+different areas of the home.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+The application is being developed incrementally, with emphasis on:
 
-<!-- END:nextjs-agent-rules -->
+- clean architecture;
+- maintainable TypeScript;
+- SEO;
+- accessibility;
+- responsive design;
+- performance;
+- secure integration with external APIs;
+- separation between application domain models and external API models.
+
+The project may integrate with the Mercado Livre API, but UI components
+must not depend directly on Mercado Livre response formats.
+
+---
+
+## Tech stack
+
+The main technologies are:
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Next.js App Router
+- ESLint
+- npm
+
+Do not introduce a new framework, state-management library, validation
+library, UI library, or runtime dependency unless there is a clear
+technical reason for it.
+
+Before adding a dependency, explain why the existing stack is not enough.
+
+---
+
+## Project structure
+
+The repository currently follows this general organization:
+
+```text
+app/
+  Category pages, layouts, metadata and Next.js routes.
+
+components/
+  Reusable UI components.
+
+data/
+  Local/mock application data.
+
+lib/
+  Infrastructure and external integrations.
+
+lib/mercado-livre/
+  Mercado Livre-specific integration code.
+
+services/
+  Application-level data access and orchestration.
+
+types/
+  Internal application/domain types.
+
+public/
+  Static assets.
